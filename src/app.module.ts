@@ -13,13 +13,8 @@ import { BreedModule } from './breed/breed.module';
       
     TypeOrmModule.forRoot({
       type: 'postgres',
-      host: process.env.DB_HOST || 'localhost',
-      port: parseInt(process.env.DB_PORT, 10) || 5433,
-      username: process.env.DB_USER || 'root',
-      password: process.env.DB_PASSWORD || 'root',
-      database: process.env.DB_NAME || 'root',
-      autoLoadEntities: true,
-      synchronize: true, // ¡No usar en producción!
+      url: process.env.DB_URL,
+      autoLoadEntities: true,      
     }),
       
     DogsModule,

@@ -9,17 +9,13 @@ import {
 import { Breed } from 'src/breed/entities/breed.entity';
 
 export class CreateDogDto {
-  
   @IsString()
   @MinLength(1)
   name: string;
 
   @IsInt()
-  @MinLength(1)
   age: number;
-
-  @IsString()
-  @MinLength(1)
+  @IsInt()
   breed: number;
 
   @IsOptional()
@@ -28,6 +24,6 @@ export class CreateDogDto {
   @IsString()
   consultation: string;
 
-  @IsDateString() // Valida que sea una fecha en formato ISO 8601
+  @IsString() // Valida que sea una fecha en formato ISO 8601
   date: string;
 }

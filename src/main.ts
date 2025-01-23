@@ -12,11 +12,11 @@ async function bootstrap() {
       transform: true,
     })
   )
-  await app.listen(process.env.PORT ?? 3000);
-   app.enableCors({
-    origin: '*', // Permitir cualquier origen
-    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE', // Métodos permitidos
-    allowedHeaders: 'Content-Type, Authorization', // Encabezados permitidos
+  app.enableCors({
+    origin: '*',
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    allowedHeaders: 'Content-Type, Authorization',
   });
+  await app.listen(process.env.PORT ?? 3000);
 }
 bootstrap();
